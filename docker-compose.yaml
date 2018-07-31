@@ -1,0 +1,14 @@
+version: "2"
+services:
+  webisoget:
+    #image: local/webisoget
+    build:
+      context: .
+    container_name: webisoget
+    hostname: webisoget
+    # restart: unless-stopped
+    network_mode: "host"
+    cap_drop:
+      - ALL
+    cap_add:
+      - net_raw
