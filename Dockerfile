@@ -13,4 +13,9 @@ RUN bash ./boot \
  && ./configure
 RUN make
 RUN make install \
- && webisoget -version | egrep '^WebISOGet version '
+ && webisoget -version | egrep '^WebISOGet version ' \
+ && mkdir /webisoget
+
+WORKDIR /webisoget
+
+
