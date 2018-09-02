@@ -1,0 +1,5 @@
+version: "2"
+services:
+  webisoget:
+    volumes:
+        - /home/webisoget:/webisoget
