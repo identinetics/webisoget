@@ -3,7 +3,7 @@ services:
   webisoget:
     #image: local/webisoget
     build:
-      context: .
+      context: ../src
     container_name: webisoget
     hostname: webisoget
     # restart: unless-stopped
