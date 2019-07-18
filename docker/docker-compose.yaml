@@ -4,7 +4,7 @@ services:
     #image: local/webisoget
     build:
       context: .
-      dockerfile: ./docker/Dockerfile
+      dockerfile: Dockerfile
     container_name: webisoget
     hostname: webisoget
     # restart: unless-stopped
