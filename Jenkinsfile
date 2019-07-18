@@ -19,8 +19,6 @@ pipeline {
         stage('Config ') {
             steps {
                 sh '''#!/bin/bash -e
-                    echo "using ${compose_cfg} as docker-compose config file"
-                    cp "${compose_cfg}.default" $compose_cfg
                     egrep '( image:| container_name:)' $compose_cfg || echo "missing keys in ${compose_cfg}"
                 '''
             }
@@ -40,12 +38,11 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''#!/bin/bash -e
-                    source ./jenkins_scripts.sh
-                    remove_container_if_not_running
                     if [[ "$nocache" ]]; then
                          nocacheopt='-c'
                          echo 'build with option nocache'
                     fi
+                    cd docker
                     docker-compose build $nocacheopt || \
                         (rc=$?; echo "build failed with rc rc?"; exit $rc)
                 '''
