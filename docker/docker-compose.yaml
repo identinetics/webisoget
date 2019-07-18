@@ -1,7 +1,7 @@
 version: "2"
 services:
   webisoget:
-    #image: local/webisoget
+    image: r2h2/webisoget
     build:
       context: .
       dockerfile: Dockerfile
