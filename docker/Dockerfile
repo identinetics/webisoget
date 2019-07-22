@@ -14,6 +14,7 @@ RUN make
 RUN make install \
  && webisoget -version | egrep '^WebISOGet version ' \
  && mkdir /webisoget
+COPY test  /test
 
 WORKDIR /webisoget
 
