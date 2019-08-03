@@ -6,9 +6,9 @@ RUN yum -y update \
  && yum -y install shtool \
  && yum -y install libtool shtool libcurl-devel openssl-devel
 
+COPY src /src
 WORKDIR /src
-RUN git clone \
- && bash ./boot \
+RUN bash ./boot \
  && ./configure
 RUN make
 RUN make install \
