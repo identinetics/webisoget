@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        compose_cfg='docker-compose.yaml'
+        compose_cfg='docker/docker-compose.yaml'
         container='webisoget'
         d_containers="${container}"
         d_volumes='webisoget'
